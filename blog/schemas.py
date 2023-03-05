@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 from pydantic import BaseModel
 
 
@@ -36,3 +36,18 @@ class ShowBlog(BaseModel):
 
     class Config():
         orm_mode = True
+
+
+class Login(BaseModel):
+    username: str  # using username not email because jwt requires the identifier as username
+    password: str
+
+
+# for JWT token
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: Union[str, None] = None
