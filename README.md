@@ -26,4 +26,7 @@ cd app
 
 # run the project with uvicorn autoreload to watch the file changes
 uvicorn main:app --reload
+
+# deactivate the virtual environment
+deactivate
 ```
